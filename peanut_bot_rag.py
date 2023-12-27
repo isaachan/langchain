@@ -1,5 +1,12 @@
 import dotenv
-dotenv.load_dotenv()
+from dotenv import find_dotenv, load_dotenv 
+load_dotenv(find_dotenv(), verbose=True)
+
+import os
+print("=================================")
+print(os.getenv("OPENAI_API_KEY"))
+print(os.getenv("X"))
+print("=================================")
 
 import bs4
 from langchain import hub
@@ -11,15 +18,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain_core.runnables import RunnablePassthrough
 from langchain.document_loaders import PyPDFDirectoryLoader
-
-# loader = WebBaseLoader(
-#     web_paths=("https://lilianweng.github.io/posts/2023-06-23-agent/",),
-#     bs_kwargs=dict(
-#         parse_only=bs4.SoupStrainer(
-#             class_=("post-content", "post-title", "post-header")
-#         )
-#     ),
-# )
 
 loader = PyPDFDirectoryLoader('./peanut_docs/')
 docs = loader.load()

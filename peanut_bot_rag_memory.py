@@ -1,5 +1,5 @@
 import dotenv
-dotenv.load_dotenv()
+dotenv.load_dotenv(verbose=True)
 
 import bs4
 from langchain import hub
