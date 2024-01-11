@@ -11,4 +11,9 @@ bs4==0.0.1
 pypdf==3.17.4
 pandas==2.1.4
 numpy==1.26.2
-
+dataset==1.6.2
+google-auth 
+google-auth-httplib2==0.2.0
+google-auth-oauthlib==1.2.0
+google-api-python-client==2.113.0
+requests
